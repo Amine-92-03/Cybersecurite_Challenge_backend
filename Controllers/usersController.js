@@ -1,5 +1,25 @@
 const contact = require("../Models/contact");
 
+module.exports.getAllUsers = async (req, res) => {
+  // Create a new user document
+
+  contact.User.find({})
+    .then((users) => {
+      res.status(200).json({
+        status_code: 200,
+        flagIntegration: true,
+        data: users,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: "User not saved to collection!",
+        flagIntegration: false,
+        erreur: err,
+      });
+    });
+};
+
 module.exports.saveUser = (req, res) => {
   // Create a new user document
   const userForm = req.body;
