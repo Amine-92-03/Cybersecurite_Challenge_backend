@@ -1,8 +1,6 @@
 const contact = require("../Models/contact");
 
 module.exports.getAllUsers = async (req, res) => {
-  // Create a new user document
-
   contact.User.find({})
     .then((users) => {
       res.status(200).json({
