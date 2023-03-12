@@ -6,6 +6,10 @@ app.use("/css", express.static("./public/css"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+  res.send("<h1> BACKEND PROJET POIN : CYBERSECURITE CHALLENGE</h1>");
+});
+
 app.get("/test", (req, res) => {
   res.status(200).json({
     status_code: 200,
