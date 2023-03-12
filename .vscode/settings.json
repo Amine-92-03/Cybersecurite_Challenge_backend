@@ -1,4 +1,8 @@
 {
   "appService.defaultWebAppToDeploy": "undefined/subscriptions/1374d62d-1bf8-400f-86ff-ead17bb1727c/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/cybersecuriteChallengeback",
-  "appService.deploySubpath": "."
+  "appService.deploySubpath": ".",
+  "appService.zipIgnorePattern": [
+    "node_modules{,/**}",
+    ".vscode{,/**}"
+  ]
 }

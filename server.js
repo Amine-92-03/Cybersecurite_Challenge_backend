@@ -1,6 +1,6 @@
 const http = require("http");
 const app = require("./app");
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 const server = http.createServer(app);
 // connodest nodemailer = require("nodemailer");
 
@@ -17,18 +17,20 @@ server.listen(serverPort, (err) => {
   }
 });
 
-// // enlever le warning
-// mongoose.set("strictQuery", false);
-// // Connecting to database
-// mongoose
-//   .connect(process.env.URL_MONGODB)
-//   .then((ans) => {
-//     console.log("Connected to DB Successful");
-//   })
-//   .catch((err) => {
-//     console.log("Error in the Connection");
-//   });
+// enlever le warning
+mongoose.set("strictQuery", false);
+// Connecting to database
+mongoose
+  .connect(process.env.URL_MONGODB)
+  .then((ans) => {
+    console.log("Connected to DB Successful");
+  })
+  .catch((err) => {
+    console.log("Error in the Connection");
+  });
 
+
+  
 // // configuration de la messagerie
 // var transporter = nodemailer.createTransport({
 //   service: "gmail",
