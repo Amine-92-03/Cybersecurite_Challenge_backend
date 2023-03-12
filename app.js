@@ -7,8 +7,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use("/css", express.static("./public/css"));
 
-app.use("/api/tdb", tdbRoute);
-
+app.use("/", tdbRoute);
 app.use("/api/data", dataRoute);
 
 module.exports = app;
