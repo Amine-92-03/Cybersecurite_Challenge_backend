@@ -1,0 +1,35 @@
+const contact = require("../Models/contact");
+
+module.exports.saveUser = (req, res) => {
+  // Create a new user document
+  const userForm = req.body;
+  const user = new contact.User(userForm);
+  // Save the user document to the database
+  user
+    .save()
+    .then(() => {
+      res.status(200).json({
+        status_code: 200,
+        flagIntegration: true,
+        message: "User saved to collection!",
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).send("User not saved to collection!");
+    });
+};
+
+
+module.exports.testApi = (req, res) => {
+    res.status(200).json({
+      status_code: 200,
+      data: {
+        user: "amine",
+        company: "EPSI",
+        project: "CYBER SECURITE CHALLENGE BACKEND",
+        date: new Date(),
+      },
+      message: "Salut Romain c'est un test pour toi",
+    });
+  }
