@@ -15,21 +15,23 @@ module.exports.saveUser = (req, res) => {
       });
     })
     .catch((err) => {
-      console.log(err);
-      res.status(500).send("User not saved to collection!");
+      res.status(500).json({
+        message: "User not saved to collection!",
+        flagIntegration: false,
+        erreur: err,
+      });
     });
 };
 
-
 module.exports.testApi = (req, res) => {
-    res.status(200).json({
-      status_code: 200,
-      data: {
-        user: "amine",
-        company: "EPSI",
-        project: "CYBER SECURITE CHALLENGE BACKEND",
-        date: new Date(),
-      },
-      message: "Salut Romain c'est un test pour toi",
-    });
-  }
+  res.status(200).json({
+    status_code: 200,
+    data: {
+      user: "amine",
+      company: "EPSI",
+      project: "CYBER SECURITE CHALLENGE BACKEND",
+      date: new Date(),
+    },
+    message: "Salut Romain c'est un test pour toi",
+  });
+};

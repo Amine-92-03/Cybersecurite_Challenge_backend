@@ -1,18 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-
-const usersController = require("./Controllers/usersController");
-const mainController = require("./Controllers/mainController");
-app.use("/css", express.static("./public/css"));
+const dataRoute = require("./Routes/dataRoute");
+const tdbRoute = require("./Routes/tdbRouter");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+// app.use("/css", express.static("./public/css"));
 
+app.use("/api/tdb", tdbRoute);
 
-app.get("/", mainController.main);
-
-app.post("/saveContact", usersController.saveUser);
-
-app.get("/test", usersController.testApi);
+app.use("/api/data", dataRoute);
 
 module.exports = app;
