@@ -9,5 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/", tdbRoute);
 app.use("/api/data", dataRoute);
+app.set("view engine", "ejs");
+app.set("View", "./Views");
 
 module.exports = app;
