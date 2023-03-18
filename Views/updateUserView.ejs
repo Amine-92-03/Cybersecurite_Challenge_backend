@@ -1,0 +1,65 @@
+<%- include('layout/header') %>
+<div class="container" style="max-width: 50rem">
+  <h1>Mise à jours information joueur</h1>
+  <div id="alert"></div>
+  <form
+    class="row g-3 m-3"
+    id="contactForm"
+    method="POST"
+    action="/updateUser/?id_user=<%= user.id %>">
+    <div class="col-md-6">
+      <label for="inputPrenom" class="form-label">Prénom</label>
+      <input
+        type="text"
+        name="firstName"
+        value="<%= user.firstName %>"
+        class="form-control"
+        id="inputPrenom" />
+    </div>
+    <div class="col-md-6">
+      <label for="inputNom" class="form-label">Nom</label>
+      <input
+        type="text"
+        name="lastName"
+        value="<%= user.lastName %>"
+        class="form-control"
+        id="inputNom" />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail" class="form-label">Email</label>
+      <input
+        type="email"
+        name="email"
+        value="<%= user.email %>"
+        class="form-control"
+        id="inputEmail" />
+    </div>
+    <div class="col-md-6">
+      <label for="inputAge" class="form-label">Age</label>
+      <input
+        type="text"
+        name="age"
+        value="<%= user.age %>"
+        class="form-control"
+        id="inputAge" />
+    </div>
+
+    <!-- <div class="col-12">
+      <div class="form-check form-switch">
+        <input type="checkbox" name="ChekBox" id="gridCheck" />
+        <label class="form-check-label" for="gridSCheck">
+          je reconnais d'avoir pris connaissance que les information fournies
+          sont utilisées pour la prise de contact
+        </label>
+      </div>
+    </div> -->
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" id="submitButton">
+        Mettre à jour
+      </button>
+    </div>
+  </form>
+</div>
+
+<%- include('layout/footer') %>

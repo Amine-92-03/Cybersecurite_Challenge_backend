@@ -76,6 +76,50 @@ module.exports.deleteUser = (req, res) => {
       });
     });
 };
+
+module.exports.updateUserView = (req, res) => {
+  const id = req.query.id_user;
+  contact.User.findById(id)
+    .then((user) => {
+      return res.render("updateUserView", {
+        title: "Cybersécurité Challenge",
+        user: user,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: "User not saved to collection!",
+        flagIntegration: false,
+        erreur: err,
+      });
+    });
+};
+
+module.exports.updateUser = (req, res) => {
+  const id = req.query.id_user;
+  const userForm = req.body;
+  const user = new contact.User(userForm);
+  contact.User.findByIdAndUpdate(
+    id,
+    {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      age: user.age,
+    },
+    { new: true }
+  )
+    .then(() => {
+      res.redirect("/getlistUsers");
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: "User not saved to collection!",
+        flagIntegration: false,
+        erreur: err,
+      });
+    });
+};
 //  page principal HOME
 
 module.exports.getHomedata = (req, res) => {

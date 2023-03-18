@@ -8,5 +8,7 @@ router.get("/addUser", pilotageController.addUserView);
 router.post("/addUser", pilotageController.addUser);
 router.get("/deleteUser", pilotageController.deleteUserView);
 router.post("/deleteUser", pilotageController.deleteUser);
+router.get("/updateUser", pilotageController.updateUserView);
+router.post("/updateUser", pilotageController.updateUser);
 
 module.exports = router;
