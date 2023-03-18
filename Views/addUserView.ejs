@@ -1,0 +1,45 @@
+<%- include('layout/header') %>
+<div class="container" style="max-width: 50rem">
+  <h1>Formulaire de contact</h1>
+  <div id="alert"></div>
+  <form class="row g-3 m-3" id="contactForm" method="POST" action="/addUser">
+    <div class="col-md-6">
+      <label for="inputPrenom" class="form-label">Prénom</label>
+      <input
+        type="text"
+        name="firstName"
+        class="form-control"
+        id="inputPrenom" />
+    </div>
+    <div class="col-md-6">
+      <label for="inputNom" class="form-label">Nom</label>
+      <input type="text" name="lastName" class="form-control" id="inputNom" />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail" class="form-label">Email</label>
+      <input type="email" name="email" class="form-control" id="inputEmail" />
+    </div>
+    <div class="col-md-6">
+      <label for="inputAge" class="form-label">Age</label>
+      <input type="text" name="age" class="form-control" id="inputAge" />
+    </div>
+
+    <!-- <div class="col-12">
+      <div class="form-check form-switch">
+        <input type="checkbox" name="ChekBox" id="gridCheck" />
+        <label class="form-check-label" for="gridSCheck">
+          je reconnais d'avoir pris connaissance que les information fournies
+          sont utilisées pour la prise de contact
+        </label>
+      </div>
+    </div> -->
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" id="submitButton">
+        Enregistrer
+      </button>
+    </div>
+  </form>
+</div>
+
+<%- include('layout/footer') %>
