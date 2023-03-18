@@ -13,46 +13,44 @@
         >
       </div>
     </div>
-    <!-- </div>
-    </div> -->
-  </div>
-  <div class="row justify-content-around m-3">
-    <table id="myTable" class="display" style="width: 100%">
-      <thead>
-        <tr>
-          <th>Nom du joueur</th>
-          <th>E-mail</th>
-          <th>Âge</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% if(users.length > 0) { %> <% for(let user of users) { %>
-        <tr>
-          <th scope="row"><%= user.firstName %> <%= user.lastName %></th>
-          <td><%= user.email %></td>
-          <td><%= user.age %></td>
-          <td>
-            <a
-              href="/updateCustomer/<%= user._id %>"
-              class="btn btn-sm btn-warning m-1"
-              ><i class="fa fa-edit"></i
-            ></a>
-            <a
-              href="/deleteCustomer/<%= user._id %>"
-              class="btn btn-sm btn-danger m-1"
-              ><i class="fa fa-trash"></i
-            ></a>
-          </td>
-        </tr>
-        <% } %> <% } else { %>
-        <tr>
-          <td>No data found</td>
-        </tr>
-        <% } %>
-      </tbody>
-    </table>
+
+    <div class="row justify-content-around m-3">
+      <table id="myTable" class="display" style="width: 100%">
+        <thead>
+          <tr>
+            <th>Nom du joueur</th>
+            <th>E-mail</th>
+            <th>Âge</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if(users.length > 0) { %> <% for(let user of users) { %>
+          <tr>
+            <th scope="row"><%= user.firstName %> <%= user.lastName %></th>
+            <td><%= user.email %></td>
+            <td><%= user.age %></td>
+            <td>
+              <a
+                href="/updateCustomer/<%= user._id %>"
+                class="btn btn-sm btn-warning m-1"
+                ><i class="fa fa-edit"></i
+              ></a>
+              <a
+                href="/deleteUser/?id_user=<%= user._id %>"
+                class="btn btn-sm btn-danger m-1"
+                ><i class="fa fa-trash"></i
+              ></a>
+            </td>
+          </tr>
+          <% } %> <% } else { %>
+          <tr>
+            <td>No data found</td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
-
 <%- include('layout/footer') %>

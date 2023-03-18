@@ -1,0 +1,20 @@
+<%- include('layout/header') %>
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">Confirmation de suppression</div>
+    <div class="card-body">
+      <p>
+        Êtes-vous sûr de vouloir supprimer le joueur <%=user.firstName%>
+        <%=user.lastName%>
+      </p>
+      <form action="/deleteUser/?id_user=<%=user.id%>" method="POST">
+        <input type="hidden" name="id" value="1" />
+        <!-- Remplacer 1 par l'ID de l'élément à supprimer -->
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+        <a href="/getlistUsers" class="btn btn-secondary">Annuler</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('layout/footer') %>

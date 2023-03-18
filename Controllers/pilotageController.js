@@ -44,6 +44,38 @@ module.exports.getListViews = (req, res) => {
     });
 };
 
+module.exports.deleteUserView = (req, res) => {
+  const id = req.query.id_user;
+  contact.User.findById(id)
+    .then((user) => {
+      return res.render("deleteUserView", {
+        title: "Cybersécurité Challenge",
+        user: user,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: "User not saved to collection!",
+        flagIntegration: false,
+        erreur: err,
+      });
+    });
+};
+
+module.exports.deleteUser = (req, res) => {
+  const id = req.query.id_user;
+  contact.User.findByIdAndRemove(id)
+    .then(() => {
+      res.redirect("/getlistUsers");
+    })
+    .catch((err) => {
+      res.status(500).json({
+        message: "User not saved to collection!",
+        flagIntegration: false,
+        erreur: err,
+      });
+    });
+};
 //  page principal HOME
 
 module.exports.getHomedata = (req, res) => {
