@@ -1,6 +1,9 @@
 <%- include('layout/header') %>
 <div class="container" style="max-width: 50rem">
-  <h1>Mise à jours information joueur</h1>
+  <h2>
+    Mise à jours information du joueur :
+    <br /><b><%=user.firstName%> <%=user.lastName%> </b>
+  </h2>
   <div id="alert"></div>
   <form
     class="row g-3 m-3"
@@ -58,9 +61,7 @@
       <button type="submit" class="btn btn-primary" id="submitButton">
         Mettre à jour
       </button>
-      <button href="/getlistUsers" class="btn btn-warning" id="submitButton">
-        Annuler
-      </button>
+      <a href="/getlistUsers" class="btn btn-warning">Annuler</a>
     </div>
   </form>
 </div>
