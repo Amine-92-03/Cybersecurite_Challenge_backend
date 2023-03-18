@@ -1,8 +1,10 @@
 <%- include('layout/header') %>
-<div class="card">
-  <div class="card-header">
+<div class="container">
+  <div class="row justify-content-around m-3">
+    <!-- <div class="card">
+      <div class="card-header"> -->
     <div class="row">
-      <div class="col-8">
+      <div class="col-8 Justify-content-around">
         <h4 class="font-weight-bold">Tous les Joueurs</h4>
       </div>
       <div class="col-4">
@@ -11,15 +13,17 @@
         >
       </div>
     </div>
+    <!-- </div>
+    </div> -->
   </div>
-  <div class="card-body">
-    <table class="table table-hover">
-      <thead class="table-dark">
+  <div class="row justify-content-around m-3">
+    <table id="myTable" class="display">
+      <thead>
         <tr>
-          <th scope="col">Nom du joueur</th>
-          <th scope="col">E-mail</th>
-          <th scope="col">Age</th>
-          <th scope="col">Action</th>
+          <th>Nom du joueur</th>
+          <th>E-mail</th>
+          <th>Âge</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -31,12 +35,12 @@
           <td>
             <a
               href="/updateCustomer/<%= user._id %>"
-              class="btn btn-sm btn-warning"
+              class="btn btn-sm btn-warning m-1"
               ><i class="fa fa-edit"></i
             ></a>
             <a
               href="/deleteCustomer/<%= user._id %>"
-              class="btn btn-sm btn-danger"
+              class="btn btn-sm btn-danger m-1"
               ><i class="fa fa-trash"></i
             ></a>
           </td>
