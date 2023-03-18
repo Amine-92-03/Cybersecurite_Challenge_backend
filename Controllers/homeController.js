@@ -9,7 +9,7 @@ module.exports.getListViews = (req, res) => {
     .then((users) => {
       return res.render("listeUsers", {
         title: "Cybersécurité Challenge",
-        data: users,
+        users: users,
       });
     })
     .catch((err) => {
