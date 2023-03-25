@@ -1,5 +1,8 @@
 const contact = require("../Models/contact");
 
+module.exports.chartTest = (req, res) => {
+  return res.render("chartstest", { title: "Cybersécurité Challenge" });
+};
 //  Partie page Utilisateurs
 
 module.exports.addUserView = (req, res) => {
