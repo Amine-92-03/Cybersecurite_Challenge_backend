@@ -1,21 +1,21 @@
 <%- include('layout/header') %>
-<div class="container">
-  <div class="row justify-content-around m-3">
-    <!-- <div class="card">
+<div class="container-fluid">
+  <!-- <div class="card">
       <div class="card-header"> -->
-    <div class="row">
-      <div class="col-8 Justify-content-around">
-        <h4 class="font-weight-bold">Tous les Joueurs</h4>
-      </div>
-      <div class="col-4">
-        <a href="/addUser" class="btn btn-success float-right"
-          ><i class="fa fa-plus mr-1"></i>Ajouter nouveau</a
-        >
-      </div>
+  <div class="row m-2">
+    <div class="col-8 Justify-content-around">
+      <h4 class="font-weight-bold">Tous les Joueurs</h4>
     </div>
+    <div class="col-4">
+      <a href="/addUser" class="btn btn-success float-right"
+        ><i class="fa fa-plus mr-1"></i>Ajouter nouveau</a
+      >
+    </div>
+  </div>
 
-    <div class="row justify-content-around m-3">
-      <table id="myTable" class="display" style="width: 100%">
+  <div class="row m-4">
+    <div class="col table-responsive">
+      <table id="myTable">
         <thead>
           <tr>
             <th>Nom du joueur</th>
